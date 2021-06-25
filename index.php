@@ -1,14 +1,15 @@
 <?php
 
-/*
-Oggi pomeriggio ripassate i primi concetti di classe e di variabili e metodi d'istanza che abbiamo visto stamattina 
-e create un file index.php in cui:
-- è definita una classe ‘Movie’
-=> all'interno della classe sono dichiarate delle variabili d'istanza
-=> all'interno della classe è definito un costruttore
-=> all'interno della classe è definito almeno un metodo
-- vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
- */
+include __DIR__ . '/classes/Movie.php';
+
+$movies = [
+    new Movies('The Avengers', 'Fantascienza/Azione', 'https://pad.mymovies.it/filmclub/2009/03/107/locandina.jpg'),
+    new Movies('Saw', 'Horror/Triller', 'https://images-na.ssl-images-amazon.com/images/I/41J9mRV5AUL._SY445_.jpg'),
+    new Movies('The Amazing Spider-Man', 'Fantascienza/Azione', 'https://images-na.ssl-images-amazon.com/images/I/91zDgUhTW6L._SY679_.jpg'),
+    new Movies('Transformers', 'Animazione/Fantastico', 'https://pad.mymovies.it/filmclub/2006/08/027/locandina.jpg'),
+
+];
+
 
 ?>
 
@@ -23,7 +24,28 @@ e create un file index.php in cui:
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+        <img src="./assets/img/pirate_logo.png" alt="Site logo" class="logo">
+        <h1>The Pirate Bay</h1>
+    </header>
+    <!-- /Header -->
 
+    <!-- Main -->
+    <main>
+        <div class="container">
+
+            <?php foreach ($movies as $movie) : ?>
+                <div class="card">
+                    <img src="<?= $movie->img ?>" alt="<?= $movie->title ?>">
+                    <h2><?= $movie->title ?></h2>
+                    <h3><?= $movie->genre ?></h3>
+                </div>
+
+            <?php endforeach; ?>
+        </div>
+    </main>
+    <!-- /Main -->
 
 
 </body>
