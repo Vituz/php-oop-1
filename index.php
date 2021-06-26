@@ -10,7 +10,6 @@ $movies = [
 
 ];
 
-
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +38,19 @@ $movies = [
         <div class="container">
 
             <?php foreach ($movies as $movie) : ?>
+                <?php $number = rand(0, 2);
+                if ($number == 1) : ?>
+                    <?php $movie->setDownloaded(true); ?>
+                <?php endif; ?>
+
                 <div class="card">
                     <img src="<?= $movie->img ?>" alt="<?= $movie->title ?>">
                     <h2><?= $movie->title ?></h2>
                     <h3><?= $movie->genre ?></h3>
+
+                    <?php if ($movie->downloaded) : ?>
+                        <h4>Just Downloaded</h4>
+                    <?php endif; ?>
                 </div>
 
             <?php endforeach; ?>
@@ -50,6 +58,11 @@ $movies = [
     </main>
     <!-- /Main -->
 
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+    <!-- /Footer -->
 
 </body>
 

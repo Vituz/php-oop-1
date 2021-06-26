@@ -39,6 +39,7 @@ header h1 {
 
 .card {
     width: 350px;
+    height: 670px;
     background-color: gray;
     color: black;
     margin: auto;
@@ -59,4 +60,18 @@ header h1 {
     height: 500px;
 }
 
+.card h4 {
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+}
+
 /* /MAIN */
+
+/* FOOTER */
+footer {
+    height: 50px;
+    background-color: gray;
+}
+
+/* /FOOTER */

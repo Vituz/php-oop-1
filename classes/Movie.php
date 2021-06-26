@@ -5,7 +5,7 @@ class Movies
     public $title;
     public $genre;
     public $img;
-    public $seen;
+    public $downloaded;
 
 
     /**
@@ -13,18 +13,18 @@ class Movies
      * @param string $title
      * @param string $genre
      * @param string $img
-     * @param bool $seen
+     * @param bool $downloaded
      */
-    function __construct(string $title, string $genre, string $img, bool $seen = false)
+    function __construct(string $title, string $genre, string $img, bool $downloaded = false)
     {
         $this->title = $title;
         $this->genre = $genre;
         $this->img = $img;
-        $this->seen = $seen;
+        $this->downloaded = $downloaded;
     }
 
-    public function setSeen(bool $seen)
+    public function setDownloaded(bool $downloaded)
     {
-        $this->seen = $seen;
+        $this->downloaded = $downloaded;
     }
 }
